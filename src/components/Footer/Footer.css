@@ -1,0 +1,7 @@
+.footer-container{
+    height: 70px;
+    background: red;
+}
+.footer-container p{
+    font-weight: 600;
+    }

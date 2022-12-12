@@ -1,0 +1,8 @@
+.notice{
+    height: 70px;
+    background-color: rgb(152, 60, 238);
+}
+.notice p{
+    padding-top: 25px;
+    color: white;
+}
