@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 import Container from 'react-bootstrap/Container';
 import NavbarBo from 'react-bootstrap/Navbar';
@@ -6,20 +6,40 @@ import NavbarBo from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Coins from '../Coins/Coins';
 
 
 const Navbar = () => {
     const [modalShow, setModalShow] = React.useState(false);
+    const [coinName, setCoinName] = useState([]);
+  
+    const [coinDetail, setCoinDetail] = useState([]);
+
+    useEffect( () => {
+        fetch('FakeData.json')
+        .then(res=> res.json())
+        .then(data => setCoinName(data))
+    }, []);
+    const handleAddToConnectedWallet = (coin) => {
+      console.log(coin);
+      const newCart = [...coinDetail, coin];
+      setCoinDetail(newCart);
+  };
     return (
         <NavbarBo>
             <Container>
                 <NavbarBo.Brand href="#home" id='logo'>Faucets</NavbarBo.Brand>
                 <NavbarBo.Toggle />
                 <NavbarBo.Collapse className="justify-content-end">
-                <NavDropdown className='coinNAme' title="Dropdown" id="nav-dropdown">
-                    <NavDropdown.Item eventKey="4.1">Action</NavDropdown.Item>
-                    <NavDropdown.Item eventKey="4.2">Another action</NavDropdown.Item>
-                    <NavDropdown.Item eventKey="4.3">Something else here</NavDropdown.Item>
+                <NavDropdown className='coinNAme' title="Ethereum Rinkeby"  id="nav-dropdown">
+
+                  {
+                    coinName.map(coin=> <Coins 
+                      key={coin.id}
+                      coin={coin}
+                      handleAddToConnectedWallet={handleAddToConnectedWallet}
+                      ></Coins>)
+                  }
                 </NavDropdown>
                 <button className='coinNAme1' onClick={() => setModalShow(true)}>
                     Connect Wallet

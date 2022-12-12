@@ -1,0 +1,10 @@
+.coins-container{
+    display: flex;
+    flex-direction: column;
+    
+}
+.coins-container button{
+    border: none;
+    background: none;
+    text-align: start;
+}

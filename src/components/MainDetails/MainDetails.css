@@ -1,0 +1,49 @@
+.mainDetails-container{
+    width: 1277px;
+    background: white;
+    margin: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+}
+.connected-Wallet{
+    text-align: start;
+    color: black;
+    background: rgb(231, 248, 231);
+    padding-left: 10px;
+}
+.connected-Wallet p{
+    margin-top: 10px;
+    font-size: 15px;
+}
+.connected-Wallet .icon{
+    color: blueviolet;
+    font-size: 20px;
+}
+.connected-Wallet span{
+    font-weight: 700;
+}
+.wallet-Details{
+    width: 50%;
+    text-align: start;
+    margin-top: 20px;
+    color: blueviolet;
+    font-weight: 500;
+}
+#disable-label{
+   display: flex;
+}
+.from-control{
+   background: red;
+  margin: 5px;
+}
+.submit-button{
+    width: 120px;
+    height: 40px;
+    border: none;
+    background: blueviolet;
+    color: white;
+    font-weight: 400;
+    border-radius: 5px;
+    margin-top: 10px;
+}
